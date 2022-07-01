@@ -8,6 +8,7 @@ Examples:
 */
 function doubleValues(arr){
     const doubleArr=[];
+    //need to create empty array because forEach won't return array.
     arr.forEach(function(num){
         doubleArr.push(num * 2);
     });
@@ -72,6 +73,15 @@ function addKeyAndValue(arr,key,value){
   
 }
 
+///Springboard Solution : why don't we need empty array?
+
+function addKeyAndValue(arr, key, value) {
+    arr.forEach(function(val) {
+      val[key] = value;
+    });
+    return arr;
+  }
+
 /*
 Write a function called vowelCount which accepts a string and returns an object with the keys as the vowel and the values as the number of times the vowel appears in the string. This function should be case insensitive so a lowercase letter and uppercase letter should count
 
@@ -94,6 +104,8 @@ function vowelCount(str){
     } else {
         obj[char]+=1;
     }
+
+    //this part could be done like this.
        
    })
    return obj;
